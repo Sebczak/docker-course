@@ -1,0 +1,10 @@
+kubectl create namespace nginx-ns
+kubectl -n nginx-ns create deployment --image=nginx nginx-app
+kubectl get deployments -n nginx-ns
+kubectl describe deployment nginx-app -n nginx-ns
+kubectl get pods -n nginx-ns -o name
+kubectl get deployment nginx-app -n nginx-ns -o yaml
+kubectl exec -n nginx-ns nginx-app-5777b5f95-7zmzp -it -- /bin/bash
+kubectl delete pod -n nginx-ns
+kubectl delete deployment nginx-app -n nginx-ns
+kubectl delete ns nginx-ns
